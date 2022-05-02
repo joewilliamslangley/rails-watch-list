@@ -1,7 +1,22 @@
-<h1>Lists</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);">
+  <div class="container">
+    <h1>Flickfiles</h1>
+    <p>Create lists out of your favourite movies.</p>
+  </div>
+</div>
 
-<% @lists.each do |list| %>
-  <h2><%= link_to list.name, list_path(list) %></h2>
-<% end %>
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h2>My lists</h2>
+    <a class="btn btn-flat" href="#">Create list</a>
+  </div>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list.name, list_path(list), class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/2398354/pexels-photo-2398354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)"  %>
+    <% end %>
+  </div>
+</div>
+
+
 
 <%= link_to "Create list", new_list_path %>
